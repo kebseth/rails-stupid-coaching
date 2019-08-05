@@ -1,2 +1,22 @@
 <h1>Questions#answer</h1>
-<p>Find me in app/views/questions/answer.html.erb</p>
+
+<h3>Reponse: </h3>
+<p>
+  <% if @message.nil?%>
+  <%= 'You say nothing...' %>
+  <% else %> <%= @message %>
+  <% end %>
+</p>
+
+<h3>Answer:</h3>
+<p>
+<% if @message.nil? %>
+    <%= "I don't care, get dressed and go to work!" %>
+  <% elsif @message.include? '?' %>
+    <%= 'Silly question, get dressed and go to work!' %>
+  <% elsif @message == 'I am going to work' %>
+    <%= 'Great!' %>
+  <% else %>
+    <%= "I don't care, get dressed and go to work!" %>
+<% end %>
+</p>
